@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
 * main - Entry point
@@ -8,6 +9,9 @@
 
 int main(void)
 {
-	perror(stderr, "and that piece of art is useful\" - Dora Korpar, 2015-10-19");
-	return (0);
+
+	fprintf(stderr, "and that piece of art is useful"
+		"\" - Dora Korpar, 2015-10-19");
+
+	exit(1);
 }
