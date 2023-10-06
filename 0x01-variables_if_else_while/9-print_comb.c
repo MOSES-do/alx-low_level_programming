@@ -15,7 +15,7 @@ int main(void)
 
 	for (; num < 10; num++)
 	{
-		putchar('0' + num);
+		putchar(48 + num);
 
 		if (num < 9)
 		{
