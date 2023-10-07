@@ -20,15 +20,18 @@ int main(void)
 			{
 				if ((num != num1 && num1 != num2) && (num2 > num && num2 > num1))
 				{
-					putchar(48 + num);
-					putchar(48 + num1);
-					putchar(48 + num2);
+				if (num1 > num)
+				{
+				putchar(48 + num);
+				putchar(48 + num1);
+				putchar(48 + num2);
 
-					if (num != 7 || num1 != 8 || num2 != 9)
-					{
-						putchar(',');
-						putchar(' ');
-					}
+				if (num != 7 || num1 != 8 || num2 != 9)
+				{
+				putchar(',');
+				putchar(' ');
+				}
+				}
 				}
 			}
 		}
