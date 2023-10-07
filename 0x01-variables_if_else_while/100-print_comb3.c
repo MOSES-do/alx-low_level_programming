@@ -21,7 +21,7 @@ int main(void)
 			putchar(48 + num);
 			putchar(48 + num1);
 
-			if (num != 0 || num1 != 9)
+			if (num != 0 || num1 != 12)
 			{
 				putchar(',');
 				putchar(' ');
