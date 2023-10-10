@@ -1,4 +1,4 @@
 #include <stdio.h>
 
-//Function prototype
+/** Function prototype */
 int _putchar(char c);
