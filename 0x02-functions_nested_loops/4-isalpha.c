@@ -1,4 +1,4 @@
-#include "main.h"
+#include <ctype.h>
 
 /**
 * _isalpha -  Test for letter casing
