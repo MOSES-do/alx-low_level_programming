@@ -1,28 +1,24 @@
-#include <stdio.h>
 #include "main.h"
 
+
 /**
-* main - Entry point
+* print_alphabet - function declaration
 *
-* Return: Always 0 (Success)
+* Return: expression update
 */
 
 
-int main(void)
-{
-	print_alphabet();
-	return (0);
-}
-
 int print_alphabet(void)
 {
+
 	int i = 97;
 
 	for (; i <= 122; i++)
+	{
 		_putchar(i);
+	}
 
+	_putchar('\n');
 
-_putchar('\n');
-
-return (i);
+	return (i);
 }
