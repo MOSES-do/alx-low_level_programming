@@ -12,31 +12,26 @@
 
 	r = print_sign(n);
 
-	if (r > 0)
+	if (n > 0)
 	{
-		r *= +1;
 		_putchar('+');
-		_putchar(',');
-		_putchar(' ');
 		_putchar(r + '0');
+		_putchar(' ');
 		_putchar('\n');
 	} 
-	else if (r == 0)
+	else if (n == 0)
 	{
-		r *= 0;
 		_putchar('0');
-		_putchar(',');
-		_putchar(' ');
 		_putchar(r + '0');
+		_putchar(' ');
 		_putchar('\n');
 	}
 	else if (r < 0)
 	{
 		r *= -1;
 		_putchar('-');
-		_putchar(',');
-		_putchar(' ');
 		_putchar(r + '0');
+		_putchar(' ');
 		_putchar('\n');
 	}
  }
