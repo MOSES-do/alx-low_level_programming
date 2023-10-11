@@ -2,13 +2,13 @@
 #include "main.h"
 
 /**
- * print_time - Prints every minute of the day of from 00:00 to 23:59.
+ * jack_bauere - Prints every minute of the day of from 00:00 to 23:59.
  *
  * Return: Always 0 (Success)
  */
 
 
-int print_time(void)
+int jack_bauer(void)
 {
 	int hour, minute;
 

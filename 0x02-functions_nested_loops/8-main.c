@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	print_time();
+	jack_bauer();
 
 	return (0);
 }
