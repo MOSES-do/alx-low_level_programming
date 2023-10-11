@@ -10,6 +10,6 @@
 
 int main(void)
 {
-	_alphabet();
+	print_alphabet();
 	return (0);
 }
