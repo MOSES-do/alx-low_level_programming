@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
 * main - Entry point
@@ -9,7 +8,6 @@
 
 
 int print_alphabet(){
-
 
 	int i = 97;
 	for (; i <= 122; i++)
