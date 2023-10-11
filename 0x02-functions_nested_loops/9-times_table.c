@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include "main.h"
 
+
 /**
-*  times_table - Table of multiplication 9
+* times_table - Table of multiplication 9
+*
+* Return: ALways 0 (Success)
 */
 
 
