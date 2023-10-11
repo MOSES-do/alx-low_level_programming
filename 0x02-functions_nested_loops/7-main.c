@@ -9,17 +9,29 @@
  */
 
 
+void remain_der(int n)
+{
+	
+	int r, last_digit;
+
+
+	r = print_last_digit(n);
+
+
+	last_digit = r % 10;
+
+
+	_putchar(48 + last_digit);
+	
+	
+}
+
  int main(void)
  {
-
-	print_last_digit(98);
-	print_last_digit(0);
-	print_last_digit(-1024);
+	remain_der(98);
+	remain_der(0);
+	remain_der(-1024);
 	
-	
-	
-
 	_putchar('\n');
-
 	return (0);
  }
