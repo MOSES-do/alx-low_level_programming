@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * jack_bauere - Prints every minute of the day of from 00:00 to 23:59.
+ * jack_bauer - Prints every minute of the day of from 00:00 to 23:59.
  *
  * Return: Always 0 (Success)
  */
