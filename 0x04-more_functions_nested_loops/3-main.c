@@ -2,7 +2,8 @@
 
 /**
 * main - invokes function to print numbers
-* Return: Awaways 0 (Success)
+*
+* Return: Always 0 (Success)
 */
 
 
