@@ -2,7 +2,7 @@
 
 
 /**
-* print_letter - print new lines based on parameter 'n'
+* print_line - print new lines based on parameter 'n'
 * @n: parameter
 */
 
