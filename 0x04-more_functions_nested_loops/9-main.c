@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* fizzBuzz - print a list from 1 - 100
+* main - print a list from 1 - 100
 * Return: Always 0 (Success)
 */
 

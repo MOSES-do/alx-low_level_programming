@@ -1,20 +1,13 @@
 #include <stdio.h>
 
-
-
 /**
-* fizzBuzz - print 
+* fizzBuzz - print fizzbuzz
+*
 * @n: parameter
 */
 
-
 void fizzBuzz(int n)
 {
-	/**
-	char *a = 'Fizz';
-	char *b = 'Buzz';
-	char *c = 'FizzBuzz';
-	*/
 
 	int i;
 
