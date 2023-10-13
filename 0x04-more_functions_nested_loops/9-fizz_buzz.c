@@ -1,17 +1,17 @@
 #include <stdio.h>
 
 /**
-* fizzBuzz - print fizzbuzz
+* main - print fizzbuzz
 *
-* @n: parameter
+* Return: Always 0 (Success)
 */
 
-void fizzBuzz(int n)
+int main(void)
 {
 
 	int i;
 
-	for (i = 1; i <= n; i++)
+	for (i = 1; i <= 100; i++)
 	{
 		if (i % 15 == 0)
 		{
@@ -34,4 +34,6 @@ void fizzBuzz(int n)
 	}
 
 	putchar('\n');
+
+	return (0);
 }
