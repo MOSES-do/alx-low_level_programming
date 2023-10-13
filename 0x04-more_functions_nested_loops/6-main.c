@@ -1,0 +1,17 @@
+#include "main.h"
+
+/**
+* main - invoke function
+* Return: Always 0 (Success)
+*/
+
+
+int main(void)
+{
+	print_line(0);
+	print_line(2);
+	print_line(10);
+	print_line(-4);
+
+	return (0);
+}
