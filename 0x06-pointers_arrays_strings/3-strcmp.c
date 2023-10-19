@@ -18,18 +18,19 @@ int _strcmp(char *s1, char *s2)
 
 	while (s1[index++]  && s2[index++])
 	{
-		if (s1 < s2)
+		if (s1[index] < s2[index])
 		{
-			return (-15);
+			return (*s1 - *s2);
 		}
-		else if (s1 > s2)
+		else if (s1[index] > s2[index])
 		{
-			return (15);
+			return (*s1 - *s2);
 		}
 		else
 		{
 			return (0);
 		}
 	}
-	return (s1 - s2);	
+
+	return (0);
 }
