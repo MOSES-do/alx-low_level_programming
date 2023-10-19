@@ -1,10 +1,13 @@
 #include <string.h>
 #include <stdio.h>
+
+
 /**
-* _strncpy - function
-* @dest: param 1 - receiving array
-* @src: source array
-* @n: nth portion of "src"
+* _strncpy - Function
+* @dest: Param 1
+* @src: Param 2
+* @n: Param 3
+* Return: Always 0
 */
 
 char *_strncpy(char *dest, char *src, int n)
