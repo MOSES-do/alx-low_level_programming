@@ -1,4 +1,5 @@
-
+#include <string.h>
+#include <stdio.h>
 /**
 * _strncpy - function
 * @dest: param 1 - receiving array
@@ -8,15 +9,16 @@
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i = 0;
+	int w = 0, sr_len = 0;
 
-	while (i < n && src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
+	while (src[w++])
+		sr_len++;
 
-	dest[i] = '\0';
+	for (w = 0; w < n && src[w]; w++)
+		dest[w] = src[w];
+
+	for (w = sr_len; w < n; w++)
+		dest[w] = '\0';
 
 	return (dest);
 }
