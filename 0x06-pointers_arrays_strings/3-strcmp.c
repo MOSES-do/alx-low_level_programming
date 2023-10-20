@@ -23,6 +23,14 @@ int _strcmp(char *s1, char *s2)
 		*
 		*printf("character:\n");
 		*/
+		if (s1[index] < s2[index])
+		{
+			return (-15);
+		}
+		else if (s1[index] > s2[index])
+		{
+			return (15);
+		}
 		return (s1[index] - s2[index]);
 	index++;
 	}
