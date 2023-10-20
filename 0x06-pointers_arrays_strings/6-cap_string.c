@@ -11,7 +11,7 @@ int separator(char *sign)
 
 	int i = 0;
 
-	while (sign[i] != '\0')
+	while (sign[i])
 	{
 		if (sign[i] == ';' || sign[i] == '\t' || sign[i] == '?')
 			sign[i] = ' ';
