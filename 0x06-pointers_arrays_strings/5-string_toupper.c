@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 
 /**
 * string_toupper - function to convert letter case to upper
@@ -9,17 +9,16 @@
 
 char *string_toupper(char *str)
 {
-	int i = 0, str_len = 0;
+	int index = 0;
 
-	while (*str)
-		str_len++;
-	
-	for (; i < str_len; i++)
-		if (str[i] == ' ' || str[i] == '!')
-			continue;
-		else
-			str[i] += 32;
-	
-	return (0);
+	while (str[index])
+	{
+		if (str[index] >= 'a' && str[index] <= 'z')
+			str++ -= 32;
+
+		index++;
+	}
+
+	return (str);
 }
 
