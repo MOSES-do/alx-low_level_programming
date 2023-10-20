@@ -28,12 +28,10 @@ int separator(char *sign)
 			sign[i - 1] == '}' ||
 			sign[i - 1] == '.')
 		{
-			if (sign[i] > 'A' && sign[i] > 'Z')
+			if (sign[i] >= 'a' && sign[i] <= 'z')
 				sign[i] = sign[i] - 32;
 		}
 
-		if (sign[i] == '\t')
-			sign[i] = ' ';
 	i++;
 	}
 
