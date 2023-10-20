@@ -21,7 +21,6 @@ int separator(char *sign)
 		{
 			if (sign[i + 1] > 'A' && sign[i + 1] > 'Z')
 				sign[i + 1] = sign[i + 1] - 32;
-			i += 1; 
 		}
 
 		if (sign[i] == 'd' && sign[i + 1] == '.')
