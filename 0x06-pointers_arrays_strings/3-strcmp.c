@@ -21,11 +21,10 @@ int _strcmp(char *s1, char *s2)
 		*putchar(s1[index]);
 		*putchar(s2[index]);
 		*/
-
-
+	if (s1[index] != s2[index])
 		return (s1[index] - s2[index]);
 	index++;
 	}
 
-	return (0);
+	return (s1[index] - s2[index]);
 }
