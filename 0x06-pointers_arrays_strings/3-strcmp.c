@@ -15,14 +15,14 @@ int _strcmp(char *s1, char *s2)
 {
 
 	while (*s1 != '\0' && *s2)
-	{	
+	{
 		/*
-		putchar(*s1++);
-		putchar(*s2++);
-		
-		printf("character:\n");
+		*putchar(*s1++);
+		*putchar(*s2++);
+		*
+		*printf("character:\n");
 		*/
-	
+
 		return (*s1++ - *s2++);
 	}
 
