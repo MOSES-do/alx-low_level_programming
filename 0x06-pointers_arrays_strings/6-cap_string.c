@@ -11,8 +11,14 @@ int separator(char *sign)
 
 	int i = 0;
 
+
+	if (sign[i] >= 'a' && sign[i] <= 'z')
+		sign[i] = sign[i] - 32;
+	i++;
+
 	while (sign[i])
 	{
+
 
 		if (sign[i - 1] == ' ' ||
 			sign[i - 1] == '\t' ||
