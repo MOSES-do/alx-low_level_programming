@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/**
+* leet - function to find and replacevlaues
+* @str: parameter
+* Return: str variable for output in main
+*/
 
 char *leet(char *str)
 {
