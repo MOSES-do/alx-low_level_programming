@@ -43,7 +43,7 @@ char *encod_str(char *toks)
 				toks[index] = rot13[numOfNewChar];
 				break;
 			}
-		}	
+		}
 	index++;
 	}
 
