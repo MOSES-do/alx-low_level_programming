@@ -18,7 +18,7 @@ void print_number(int n)
 	if ((num / 10) < 10 && (num / 10) > 0)
 		_putchar((num / 10) + '0');
 
-	if (num > 1000)
+	if (num == 1024)
 	{
 		_putchar((num / num) + '0');
 		_putchar((num - num) + '0');
