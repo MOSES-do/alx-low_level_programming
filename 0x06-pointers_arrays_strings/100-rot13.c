@@ -43,12 +43,12 @@ char *encod_str(char *toks)
 				toks[index] = rot13[numOfNewChar];
 				break;
 			}
-		}
-	}
+		}	
 	index++;
-
-	return (toks);
 	}
+
+return (toks);
+}
 
 /**
 * rot13 - function to be passed to main
