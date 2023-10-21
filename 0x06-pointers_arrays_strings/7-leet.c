@@ -11,7 +11,7 @@ char *leet(char *str)
 
 	int i = 0, arrindx = 0;
 	char arr[5] = {97, 101, 111, 116, 108};
-	char arr1[5] = {65, 69, 79, 76, 84};
+	char arr1[5] = {65, 69, 79, 84, 76};
 	char leet[5] = {52, 51, 48, 55, 49};
 
 
