@@ -8,35 +8,30 @@
 
 void print_diagsums(int *a, int size)
 {
-	/**
-	*int row, col, sum = 0;
-	*diagonal right to letf
-	*
-	* for (row = 1; row <= size; row++)
-	*
-	* for (col = row; col == row; col++)
-	*
-	* sum = sum +  *(a + row + col);
-	*
-	*
-	* printf("%d ", sum);
-	*/
 
-	int index, sum1 = 0, sum2 = 0;
+	int row, col, cols = size, sum = 0, sum1 = 0;
 
-	for (index = 0; index < size; index++)
+	/*diagonal right to left*/
+	for (row = 0; row < size; row++)
 	{
-		sum1 += a[index];
-		a += size;
+		for (col = row; col == row; col++)
+		{
+			/**printf("%d \n ", *(a + row * cols + col));*/
+			sum = sum + *(a + row * cols + col);
+		}
 	}
 
-	a -= size;
-
-	for (index = 0; index < size; index++)
+	/*diagonal left to right*/
+	for (row = 0; row < size; row++)
 	{
-		sum2 += a[index];
-		a -= size;
+		int tmp = 1;
+
+		for (col = (size - row) - tmp ; col == (size - row) - tmp; col++)
+		{
+			/**printf("%d \n ", *(a + row * cols + col));*/
+			sum1 = sum1 + *(a + row * cols + col);
+		}
 	}
 
-	printf("%d, %d\n", sum1, sum2);
+	printf("%d, %d\n", sum, sum1);
 }
