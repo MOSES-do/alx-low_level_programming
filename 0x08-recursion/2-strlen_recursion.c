@@ -8,14 +8,14 @@
 
 int _strlen_recursion(char *s)
 {
-	int index = 0;
-	int str_len = 0;
 
-	while (s[index])
+	int sum = 1;
+
+	if (*s)
 	{
-		str_len++;
-	index++;
+		sum = sum + _strlen_recursion(s + 1);
+		return (sum);
 	}
 
-	return (str_len);
+	return (0);
 }
