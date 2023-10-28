@@ -4,7 +4,7 @@
 /**
 * main - function
 * @argc: param 1
-* @argv[]: param 2
+* @argv: param 2
 * Return: Always 0 Success
 */
 
