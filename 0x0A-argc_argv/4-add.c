@@ -10,17 +10,17 @@
 
 int main(int argc, char *argv[])
 {
-	int i = 1, j = 0;
-	int sum = 0;
+	int i = 1, j, sum = 0;
 
 	for (; i < argc; i++)
 	{
 		/**
 		* [i][j] checks for scenarios of alphabets joined with letters in each index
-		* 23e5 2 3 and returns an error.
+		* 23e5 e 2e 4r4  and returns an error.
+		* Don't use dereferencing to cross check values in array use their index
 		*/
 
-		for (; argv[i][j]; j++)
+		for (j = 0; argv[i][j]; j++)
 		{
 			if (argv[i][j] >= 'a' && argv[i][j] <= 'z')
 			{
@@ -29,12 +29,14 @@ int main(int argc, char *argv[])
 			}
 		}
 
-		/* [i] checks for 2 3 e 5 and returns an error */
-		if  (*argv[i] < '0' || *argv[i] > '9')
-		{
-			printf("Error\n");
-			return (1);
-		}
+		/**
+		* WRONG
+		* if  (*argv[i] < '0' || *argv[i] > '9')
+		* {
+		*	printf("Error\n");
+		*	return (1);
+		* }
+		*/
 
 		sum = sum + atoi(argv[i]);
 	}
@@ -42,5 +44,4 @@ int main(int argc, char *argv[])
 	printf("%d\n", sum);
 
 	return (0);
-
 }
