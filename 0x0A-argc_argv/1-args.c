@@ -2,7 +2,7 @@
 
 
 /**
-* nargs - function to print argc length
+* main - function to print argc length
 * @argc: param 1
 * @argv: param 2
 * Return: ALways 0 (Success
