@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/**
+* main - function
+* @argc: param 1
+* @argv: param 2
+* Return: Always (0) success
+*/
+
+int main(int argc, char *argv[])
+{
+	int i = 1;
+	int sum = 0;
+
+	for (; i < argc; i++)
+	{
+		if (argc < 1)
+		{
+			printf("0\n");
+		}
+
+		if (*argv[i] >= 'a' && *argv[i] <= 'z')
+		{
+			printf("Error\n");
+			return (1);
+		}
+		else
+		{
+			sum += atoi(argv[i]);
+		}
+	}
+
+	printf("%d\n", sum);
+
+	return (0);
+
+}
