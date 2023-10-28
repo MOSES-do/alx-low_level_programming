@@ -16,10 +16,6 @@ int main(int argc, char *argv[])
 
 	for (; i < argc; i++)
 	{
-		if (argc < 1)
-		{
-			printf("0\n");
-		}
 
 		if (*argv[i] >= 'a' && *argv[i] <= 'z')
 		{
