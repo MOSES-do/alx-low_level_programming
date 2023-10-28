@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 /**
 * main - function
@@ -11,21 +10,33 @@
 
 int main(int argc, char *argv[])
 {
-	int i = 1;
+	int i = 1, j = 0;
 	int sum = 0;
 
 	for (; i < argc; i++)
 	{
+		/**
+		* [i][j] checks for scenarios of alphabets joined with letters in each index
+		* 23e5 2 3 and returns an error.
+		*/
 
-		if (*argv[i] < '0' || *argv[i] > '9')
+		for (; argv[i][j]; j++)
+		{
+			if (argv[i][j] >= 'a' && argv[i][j] <= 'z')
+			{
+				printf("Error\n");
+				return (1);
+			}
+		}
+
+		/* [i] checks for 2 3 e 5 and returns an error */
+		if  (*argv[i] < '0' || *argv[i] > '9')
 		{
 			printf("Error\n");
 			return (1);
 		}
-		else
-		{
-			sum += atoi(argv[i]);
-		}
+
+		sum = sum + atoi(argv[i]);
 	}
 
 	printf("%d\n", sum);
