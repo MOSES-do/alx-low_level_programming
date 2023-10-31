@@ -25,7 +25,7 @@ char *argstostr(int ac, char **av)
 
 	array = malloc(sizeof(char) * size + 1);
 
-	printf("size:%d ac:%d\n", size, ac);
+	/*printf("size:%d ac:%d\n", size, ac);*/
 
 	if (array == NULL)
 		return (NULL);
