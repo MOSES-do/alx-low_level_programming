@@ -17,7 +17,7 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	array = malloc(sizeof(char) * ac - 1);
+	array = malloc(sizeof(char) * ac + 1);
 
 	/*printf("len:%d\n", ac);*/
 
@@ -28,5 +28,8 @@ char *argstostr(int ac, char **av)
 	{
 		printf("%s\n", array[ac++] + av[index]);
 	}
+
+	array[ac++] = '\0';
+
 	return (array);
 }
