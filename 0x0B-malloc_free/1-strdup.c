@@ -9,9 +9,10 @@
 */
 
 char *_strdup(char *str)
-{	
+{
 	char *array;
 	int len, i = 0;
+
 	len = strlen(str);
 
 	array = malloc(sizeof(char) * len);
@@ -19,7 +20,7 @@ char *_strdup(char *str)
 	if (array == NULL)
 		return (NULL);
 
-	for (; i < len; i++)
+	for (; str[i] && i < len; i++)
 	{
 		array[i] = str[i];
 	}
