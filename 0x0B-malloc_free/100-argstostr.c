@@ -12,24 +12,35 @@
 char *argstostr(int ac, char **av)
 {
 	char *array;
-	int index;
+	int index, byte, arg, size = ac;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	array = malloc(sizeof(char) * ac + 1);
+	for (arg = 0; arg < ac; arg++)
+	{
+		for (byte = 0; av[arg][byte]; byte++)
+			size++;
+	}
 
-	/*printf("len:%d\n", ac);*/
+	array = malloc(sizeof(char) * size + 1);
+
+	printf("size:%d ac:%d\n", size, ac);
 
 	if (array == NULL)
 		return (NULL);
 
-	for (index = 0; av[index] && index < ac; index++)
+	index = 0;
+
+	for (arg = 0; arg < ac; arg++)
 	{
-		printf("%s\n", array[ac++] + av[index]);
+		for (byte = 0; av[arg][byte]; byte++)
+			array[index++] = av[arg][byte];
+
+		array[index++] = '\n';
 	}
 
-	array[ac++] = '\0';
+	array[size] = '\0';
 
 	return (array);
 }
