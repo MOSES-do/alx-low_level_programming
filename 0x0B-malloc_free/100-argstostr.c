@@ -10,7 +10,7 @@
 
 
 char *argstostr(int ac, char **av)
-{	
+{
 	char *array;
 	int index;
 
@@ -24,7 +24,7 @@ char *argstostr(int ac, char **av)
 	if (array == NULL)
 		return (NULL);
 
-	for (index = 1; av[index] && index < ac; index++)
+	for (index = 0; av[index] && index < ac; index++)
 	{
 		printf("%s\n", array[ac++] + av[index]);
 	}
