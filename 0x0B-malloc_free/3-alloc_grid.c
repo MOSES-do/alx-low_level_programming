@@ -6,6 +6,7 @@
 /**
 * twoDarray - 2dimensional array fn() without malloc
 * @row: height of
+* @col: No. of cols of each row
 * @width: no. of cols of 2d array
 * @array: double pointer
 */
