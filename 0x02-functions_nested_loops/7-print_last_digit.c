@@ -14,6 +14,4 @@ int print_last_digit(int n)
 {
 
 	return (abs(n));
-
-	return (0);
 }
