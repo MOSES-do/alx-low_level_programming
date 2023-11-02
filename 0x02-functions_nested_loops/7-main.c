@@ -16,12 +16,14 @@ void remain_der(int n)
 
 
 	r = print_last_digit(n);
-
+		
 
 	last_digit = r % 10;
 
-
-	_putchar(48 + last_digit);
+	if (last_digit > 10)
+		_putchar(48 + (last_digit % 10));
+	else
+		_putchar(48 + last_digit);
 	
 	
 }
