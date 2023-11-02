@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
 * print_last_digit - Entry point
@@ -11,7 +12,8 @@
 
 int print_last_digit(int n)
 {
-	return (n);
+
+	return (abs(n));
 
 	return (0);
 }
