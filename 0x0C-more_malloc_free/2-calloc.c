@@ -21,12 +21,12 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (size == 0)
 		return (NULL);
 
-	memory = malloc(sizeof(size) * nmemb);
+	memory = malloc(sizeof(size) * (nmemb + 1));
 
 	if (memory == NULL)
 		return (NULL);
 
-	for (i = 0; i < nmemb - 1; i++)
+	for (i = 0; i < nmemb; i++)
 		memory[i] = '\0';
 
 	return (memory);
