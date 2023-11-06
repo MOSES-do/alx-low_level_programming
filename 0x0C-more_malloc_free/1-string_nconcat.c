@@ -15,6 +15,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *str_ncat;
 	size_t i = 0, len = 0, s2_len = 0, arrindex = 0;
 
+	if (s1 == NULL)
+		s1 = "";
+
 	if (s2 == NULL)
 		s2 = "";
 
