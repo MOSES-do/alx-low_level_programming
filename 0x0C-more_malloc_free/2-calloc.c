@@ -29,7 +29,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	fill_print = memory;
 
-	for (i = 0; i < nnemb; i++)
+	for (i = 0; i < nmemb; i++)
 	{
 		fill_print[i] = 0;
 	}
