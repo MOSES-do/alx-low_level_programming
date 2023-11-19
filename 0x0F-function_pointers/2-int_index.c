@@ -5,7 +5,7 @@
 * @array: elements to be parsed
 * @size: length of array
 * @cmp: comparism function
-* @Return: 2 on positive eq Num, 1 on negative eq num
+* Return: 2 on positive eq Num, 1 on negative eq num
 */
 
 
