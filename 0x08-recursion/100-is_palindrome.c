@@ -9,12 +9,11 @@
  */
 int find_strlen(char *s)
 {
-	int len = 0;
+	int len = 1;
 
-	if (*(s + len))
+	if (*s)
 	{
-		len++;
-		len += find_strlen(s + len);
+		len = len + find_strlen(s + 1);
 	}
 
 	return (len);

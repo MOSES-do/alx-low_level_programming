@@ -11,6 +11,7 @@
 char *_strchr(char *s, char c)
 {
 	unsigned int index = 0;
+	/*
 	unsigned int strlen = 0;
 
 	while (s[index] >= '\0')
@@ -23,4 +24,14 @@ char *_strchr(char *s, char c)
 	index++;
 	}
 	return ('\0');
+	*/
+
+	while (s[index] >= '\0')
+	{
+		if (s[index] == c)
+			return (s + index);
+	index++;
+	}
+
+	return (s);
 }

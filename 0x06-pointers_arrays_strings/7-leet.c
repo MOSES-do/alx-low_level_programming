@@ -21,7 +21,9 @@ char *leet(char *str)
 		for (arrindx = 0; arrindx < 5; arrindx++)
 		{
 			if (arr[arrindx] == str[i] || arr1[arrindx] == str[i])
+			{
 				str[i] = leet[arrindx];
+			}
 		}
 		i++;
 	}

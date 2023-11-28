@@ -11,18 +11,18 @@
 
 int times_table(void)
 {
-	int num, m, p;
+	int row, col, p, size = 10;
 
-	for (num = 0; num <= 9; num++)
+	for (row = 0; row < size; row++)
 	{
 		_putchar('0');
 
-		for (m = 1; m <= 9; m++)
+		for (col = 1; col <= size - 1; col++)
 		{
 			_putchar(',');
 			_putchar(' ');
 
-			p = num * m;
+			p = row * col;
 
 			if (p <= 9)
 				_putchar(' ');
@@ -33,6 +33,5 @@ int times_table(void)
 		}
 		_putchar('\n');
 	}
-
 	return (0);
 }

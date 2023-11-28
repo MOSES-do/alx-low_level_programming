@@ -12,3 +12,4 @@ int print_last_digit(int n);
 int jack_bauer();
 int times_table();
 int add(int n, int a);
+char print_to_98(char n);
