@@ -61,8 +61,9 @@ int cp_text_to_file(const char *file_from, char *file_to)
 		rd = read(FROM, buffer, 1024);
 		FD_VALUE = open(file_to, O_WRONLY | O_APPEND);
 	} while (rd > 0);
-	r = read(from, buffer, 1024);
-	to = open(argv[2], O_WRONLY | O_APPEND);
+
+	rd = read(FROM, buffer, 1024);
+	FD_VALUE = open(file_to, O_WRONLY | O_APPEND);
 
 	free(buffer);
 	close_file(FROM);
