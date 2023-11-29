@@ -63,7 +63,8 @@ int main(int ac, char **argv)
 	FROM = open(argv[1], O_RDONLY);
 	rd = read(FROM, buffer, BUFFER_SIZE);
 	FD_VALUE = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-
+	
+	do{
 		if (FROM == -1 || rd == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -81,8 +82,8 @@ int main(int ac, char **argv)
 
 		rd = read(FROM, buffer, 1024);
 		FD_VALUE = open(argv[2], O_WRONLY | O_APPEND);
-
-
+	} while (rd > 0);
+	
 	free(buffer);
 	close_file(FROM);
 	close_file(FD_VALUE);
