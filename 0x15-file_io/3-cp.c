@@ -28,7 +28,7 @@ char *createbuf(char *newfile)
 
 	if (buffer == NULL)
 	{
-		dprintf(2, "Error: Can't write to %s\n", newfile);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", newfile);
 		exit(99);
 	}
 
@@ -55,27 +55,27 @@ int cp_text_to_file(const char *file_from, char *file_to)
 	do {
 		if (FROM == -1 || rd == -1)
 		{
-			dprintf(2, "Error: Can't read from file %s\n", file_from);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 			free(buffer);
 			exit(98);
 		}
 
 		if (FD_VALUE == -1 || wr == -1)
 		{
-			dprintf(2, "Error: Can't write to %s\n", file_to);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			free(buffer);
 			exit(99);
 		}
+
 		rd = read(FROM, buffer, 1024);
 		FD_VALUE = open(file_to, O_WRONLY | O_APPEND);
-	} while (rd > 0);
 
-	rd = read(FROM, buffer, 1024);
-	FD_VALUE = open(file_to, O_WRONLY | O_APPEND);
+	} while (rd > 0);
 
 	free(buffer);
 	close_file(FROM);
 	close_file(FD_VALUE);
+
 	return (0);
 }
 
