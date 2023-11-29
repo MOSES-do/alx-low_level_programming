@@ -81,9 +81,11 @@ int main(int ac, char **argv)
 			free(buffe);
 			exit(99);
 		}
-
+		
+		/*
 		rd = read(FROM, buffe, 1024);
 		FD_VALUE = open(argv[2], O_WRONLY | O_APPEND);
+		*/
 
 	} while (rd > 0);
 
