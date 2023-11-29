@@ -63,7 +63,6 @@ int main(int ac, char **argv)
 	FROM = open(argv[1], O_RDONLY);
 	rd = read(FROM, buffer, BUFFER_SIZE);
 	FD_VALUE = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	wr = write(FD_VALUE, buffer, rd);
 
 	do {
 		if (FROM == -1 || rd == -1)
@@ -73,6 +72,7 @@ int main(int ac, char **argv)
 			exit(98);
 		}
 
+		wr = write(FD_VALUE, buffer, rd);
 		if (FD_VALUE == -1 || wr == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
