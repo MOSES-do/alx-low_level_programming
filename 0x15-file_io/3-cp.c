@@ -28,7 +28,7 @@ char *createbuf(char *newfile)
 
 	if (buffer == NULL)
 	{
-		dprintf(2, "Error: Can't write to %s\n", file_to);
+		dprintf(2, "Error: Can't write to %s\n", newfile);
 		exit(99);
 	}
 
