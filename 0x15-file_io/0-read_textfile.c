@@ -14,7 +14,7 @@ char *createbuffer(size_t length)
 
 	if (buffer == NULL)
 		return (0);
-	
+
 	return (buffer);
 }
 
@@ -37,7 +37,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	o = open(filename, O_RDONLY);
 	rd = read(o, buffer, letters);
 	wr = write(1, buffer, rd);
-	
+
 	if (o == -1 || rd == -1 || wr == -1)
 	{
 		free(buffer);
