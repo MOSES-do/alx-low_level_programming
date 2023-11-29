@@ -39,12 +39,12 @@ int cp_text_to_file(const char *file_from, char *file_to)
 		dprintf(2, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
-	do {
+
 		FROM = open(file_from, O_RDONLY);
 		rd = read(FROM, buffer, BUFFER_SIZE);
 		FD_VALUE = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 		wr = write(FD_VALUE, buffer, rd);
-
+	do {
 		if (FROM == -1 || rd == -1)
 		{
 			dprintf(2, "Error: Can't read from file %s\n", file_from);
@@ -61,7 +61,6 @@ int cp_text_to_file(const char *file_from, char *file_to)
 		rd = read(FROM, buffer, 1024);
 		FD_VALUE = open(file_to, O_WRONLY | O_APPEND);
 	} while (rd > 0);
-
 	rd = read(FROM, buffer, 1024);
 	FD_VALUE = open(file_to, O_WRONLY | O_APPEND);
 
