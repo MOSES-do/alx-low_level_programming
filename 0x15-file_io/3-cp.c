@@ -2,11 +2,29 @@
 #include <stdio.h>
 
 #define BUFFER_SIZE 1024
+
 /**
-* append_text_to_file - copies content from one file to another
+* close_file - terminate open sys call
+* @fd: param for file descriptor
+*/
+void close_file(int fd)
+{
+	int fildes;
+
+	fildes = close(fd);
+
+	if (fildes == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+}
+
+/**
+* cp_text_to_file - copies content from one file to another
 * @file_from: file to copy
 * @file_to: destination file from src
-* 
+* Return: 0 on success
 */
 
 int cp_text_to_file(const char *file_from, char *file_to)
@@ -19,43 +37,38 @@ int cp_text_to_file(const char *file_from, char *file_to)
 	if (buffer == NULL)
 	{
 		dprintf(2, "Error: Can't write to %s\n", file_to);
-        	exit(99);
+		exit(99);
 	}
+	do {
+		FROM = open(file_from, O_RDONLY);
+		rd = read(FROM, buffer, BUFFER_SIZE);
+		FD_VALUE = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+		wr = write(FD_VALUE, buffer, rd);
 
-	FROM = open(file_from,O_RDONLY);
-	rd = read(FROM, buffer, BUFFER_SIZE);
-	FD_VALUE = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	wr = write(FD_VALUE, buffer, rd);
+		if (FROM == -1 || rd == -1)
+		{
+			dprintf(2, "Error: Can't read from file %s\n", file_from);
+			free(buffer);
+			exit(98);
+		}
 
-	if (FROM == -1 || rd == -1)
-	{
-		dprintf(2, "Error: Can't read from file %s\n", file_from);
-		free(buffer);
-        	exit(98);
-	}
-
-	if (FD_VALUE == -1 || wr == -1)
-	{
-		dprintf(2, "Error: Can't write to %s\n", file_to);
-		free(buffer);
-        	exit(99);
-	}
-
+		if (FD_VALUE == -1 || wr == -1)
+		{
+			dprintf(2, "Error: Can't write to %s\n", file_to);
+			free(buffer);
+			exit(99);
+		}
+		rd = read(FROM, buffer, 1024);
+		FD_VALUE = open(file_to, O_WRONLY | O_APPEND);
+	} while (rd > 0);
 	free(buffer);
-	close(FROM);
-	close(FD_VALUE);
-
-	if (FD_VALUE == -1)
-	{
-		dprintf(2, "Can't close fd %d\n", FD_VALUE);
-        	exit(100);	
-	}
+	close_file(FROM);
+	close_file(FD_VALUE);
 	return (0);
 }
 
 
 /**
-*
 * main - copies contnent of one file to another
 * @ac: number of args
 * @argv: array of pointers to args
