@@ -20,6 +20,21 @@ void close_file(int fd)
 	}
 }
 
+char *createbuf(char *newfile)
+{
+	char *buffer;
+
+	buffer = malloc(sizeof(char) * BUFFER_SIZE);
+
+	if (buffer == NULL)
+	{
+		dprintf(2, "Error: Can't write to %s\n", file_to);
+		exit(99);
+	}
+
+	return (buffer);
+}
+
 /**
 * cp_text_to_file - copies content from one file to another
 * @file_from: file to copy
@@ -32,18 +47,11 @@ int cp_text_to_file(const char *file_from, char *file_to)
 	char *buffer;
 	int FD_VALUE, FROM, rd, wr;
 
-	buffer = malloc(sizeof(char) * BUFFER_SIZE);
-
-	if (buffer == NULL)
-	{
-		dprintf(2, "Error: Can't write to %s\n", file_to);
-		exit(99);
-	}
-
-		FROM = open(file_from, O_RDONLY);
-		rd = read(FROM, buffer, BUFFER_SIZE);
-		FD_VALUE = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
-		wr = write(FD_VALUE, buffer, rd);
+	buffer = createbuf(file_to);
+	FROM = open(file_from, O_RDONLY);
+	rd = read(FROM, buffer, BUFFER_SIZE);
+	FD_VALUE = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	wr = write(FD_VALUE, buffer, rd);
 	do {
 		if (FROM == -1 || rd == -1)
 		{
@@ -61,6 +69,7 @@ int cp_text_to_file(const char *file_from, char *file_to)
 		rd = read(FROM, buffer, 1024);
 		FD_VALUE = open(file_to, O_WRONLY | O_APPEND);
 	} while (rd > 0);
+
 	rd = read(FROM, buffer, 1024);
 	FD_VALUE = open(file_to, O_WRONLY | O_APPEND);
 
