@@ -90,13 +90,13 @@ int cp_text_to_file(const char *file_from, char *file_to)
 int main(int ac, char **argv)
 {
 
+	
+
 	if (ac != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
-	cp_text_to_file(argv[1], argv[2]);
-
-	return (0);
+	return cp_text_to_file(argv[1], argv[2]);
 }
