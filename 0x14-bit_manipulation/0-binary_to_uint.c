@@ -1,30 +1,61 @@
 #include "main.h"
-/**
-* binary_to_uint - convert binary to unsigned int
-* @b: Pointer to string of 0 and 1 chars
-* Return: return an unsignrd int
-*
-*/
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-unsigned int binary_to_uint(const char *b)
+unsigned int swapbuffer(int *buf, int len, const char *b)
 {
-	unsigned int num = 0, mult = 1;
-	int len;
-
-	if (*b == '\0')
-		return (0);
-
-	for (len = 0; b[len];)
-		len++;
-
-	for (len -= 1; len >= 0; len--)
+	 int tmp, i, halves;
+	 unsigned int sum = 0;
+	
+	if (len % 2)
 	{
-		if (b[len] != '0' && b[len] != '1')
-			return (0);
+		halves = (len / 2) + 1;
+	}
+	if (len % 2 == 0)
+		halves = len / 2;
 
-		num += (b[len] - '0') * mult;
-		mult *= 2;
+	for (i = 0; i < halves; i++)
+	{
+		tmp = buf[i];
+		buf[i] = buf[len - i - 1];
+		buf[len - i - 1] = tmp;
 	}
 
-	return (num);
+	for (i = 0; i < len; i++)
+	{
+		if (b[i] == '0')
+			buf[i] = 0;
+		sum += buf[i];
+	}
+	return (sum);
+	free(buf);
+}
+
+unsigned int binary_to_uint(const char *b)
+{	
+	int *buffer, len, n = 0, i = 0, base = 2;
+	len = strlen(b);
+
+	buffer = malloc(sizeof(int) * len);
+
+	if (buffer == NULL)
+		return (1);
+	
+	for (i = 0; i < len; i++)
+	{
+		if ((b[i] >= 'a' && b[i] <= 'z') || b == NULL)
+		{
+			free(buffer);
+			return (0);
+		}
+
+		n += 1;	
+		buffer[i] = n;
+		if (n > 1)
+		{	
+			buffer[i] = buffer[i - 1] * base;
+		}
+	}
+	return (swapbuffer(buffer, len, b));
 }
