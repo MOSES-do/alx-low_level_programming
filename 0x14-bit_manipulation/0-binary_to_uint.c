@@ -34,7 +34,7 @@ unsigned int swapbuffer(int *buf, int len, const char *b)
 
 unsigned int binary_to_uint(const char *b)
 {	
-	int *buffer, len, n = 0, i = 0, base = 2;
+	int *buffer, len, n = 0, i, base = 2;
 	len = strlen(b);
 
 	buffer = malloc(sizeof(int) * len);
@@ -42,13 +42,11 @@ unsigned int binary_to_uint(const char *b)
 	if (buffer == NULL)
 		return (1);
 	
+
 	for (i = 0; i < len; i++)
 	{
-		if ((b[i] >= 'a' && b[i] <= 'z') || b == NULL)
-		{
-			free(buffer);
+		if (b[i] >= 'a' && b[i] <= 'z')
 			return (0);
-		}
 
 		n += 1;	
 		buffer[i] = n;
