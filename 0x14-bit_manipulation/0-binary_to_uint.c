@@ -17,9 +17,7 @@ unsigned int swapbuffer(int *buf, int len, const char *b)
 	 unsigned int sum = 0;
 
 	if (len % 2)
-	{
 		halves = (len / 2) + 1;
-	}
 	if (len % 2 == 0)
 		halves = len / 2;
 
@@ -50,24 +48,29 @@ unsigned int binary_to_uint(const char *b)
 {
 	int *buffer, len, n = 0, i, base = 2;
 
-	len = strlen(b);
-
-	buffer = malloc(sizeof(int) * len);
-
-	if (buffer == NULL)
-		return (1);
-
-	for (i = 0; i < len; i++)
+	if (b != NULL)
 	{
-		if (b[i] != '0' && b[i] != '1')
+		len = strlen(b);
+
+		buffer = malloc(sizeof(int) * len);
+
+		if (buffer == NULL)
 			return (0);
 
-		n += 1;
-		buffer[i] = n;
-		if (n > 1)
+		for (i = 0; i < len; i++)
 		{
-			buffer[i] = buffer[i - 1] * base;
+			if (b[i] != '0' && b[i] != '1')
+				return (0);
+
+			n += 1;
+			buffer[i] = n;
+			if (n > 1)
+				buffer[i] = buffer[i - 1] * base;
 		}
+	}
+	else
+	{
+		return (0);
 	}
 	return (swapbuffer(buffer, len, b));
 }
