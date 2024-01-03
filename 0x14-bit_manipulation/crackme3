@@ -1,0 +1,6 @@
+#!/bin/bash
+
+command="$1"
+file="$2"
+
+$command "$file"
