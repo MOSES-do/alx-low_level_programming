@@ -1,7 +1,7 @@
 
 CC = gcc
 SRC := $(wildcard *.c)
-OBJ := $(SRCS:%.c=%.o)
+OBJ := $(SRC:%.c=%.o)
 NAME = school
 
 
@@ -17,6 +17,6 @@ all: $(OBJ) $(clean)
 
 clean:
 	#rm -rvf *.o ${NAME}
-	rm -f $(OBJS) $(NAME)
+	rm -f $(OBJ) $(NAME)
 
-#.PHONY: clean
+.PHONY: clean
