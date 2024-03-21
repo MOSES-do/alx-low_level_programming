@@ -1,18 +1,26 @@
 .PHONY: all
 
-CC = gcc
-SRC = main.c school.c
-OBJ := $(SRC:%.c=%.o)
-NAME := school
+#CC = gcc
+#SRC = main.c school.c
+#OBJ := $(SRC:%.c=%.o)
+#NAME := school
 
 
-$(NAME): $(OBJ)
-	$(CC)  $^ -o $@
+#$(NAME): $(OBJ)
+#	$(CC)  $^ -o $@
 
-all: $(OBJ) $(clean)
+#all: $(OBJ) $(clean)
 
 #clean:
 #	#rm -rvf *.o ${NAME}
 #	rm -f $(OBJ) $(NAME)
 
 #.PHONY: clean
+
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:%.c=%.o)
+NAME = school
+
+all: ${OBJ}
+	${CC} ${OBJ} -o ${NAME}
