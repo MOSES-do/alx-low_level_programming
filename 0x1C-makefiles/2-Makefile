@@ -1,0 +1,22 @@
+
+CC = gcc
+SRCS := $(wildcard *.c)
+OBJ := $(SRCS:%.c=%.o)
+NAME = school
+
+
+%.o: %.c
+	${CC} -c $< -o $@
+
+$(NAME): $(OBJ)
+	$(CC)  $^ -o $@
+
+
+all: $(OBJ) $(clean)
+
+
+clean:
+	#rm -rvf *.o ${NAME}
+	rm -f $(OBJS) $(NAME)
+
+#.PHONY: clean
