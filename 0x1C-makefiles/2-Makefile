@@ -6,16 +6,13 @@ OBJ := $(SRC:%.c=%.o)
 NAME := school
 
 
-%.o: %.c
-	${CC} -c $< -o $@
-
 $(NAME): $(OBJ)
 	$(CC)  $^ -o $@
 
 all: $(OBJ) $(clean)
 
-clean:
-	#rm -rvf *.o ${NAME}
-	rm -f $(OBJ) $(NAME)
+#clean:
+#	#rm -rvf *.o ${NAME}
+#	rm -f $(OBJ) $(NAME)
 
-.PHONY: clean
+#.PHONY: clean
