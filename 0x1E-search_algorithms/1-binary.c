@@ -9,14 +9,14 @@
  * Return: -1 /if element is not found/
  */
 int binary_search(int *array, size_t size, int value)
-{	
+{
 	size_t mid = 0;
 	size_t i = 0;
 	size_t left = 0;
 	size_t right = size - 1;
-	
+
 	if (array == NULL)
-		return(-1);
+		return (-1);
 
 	while (left <= right)
 	{
