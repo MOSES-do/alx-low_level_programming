@@ -1,4 +1,5 @@
 #include "search_algos.h"
+
 /**
  * binary_search - function to search an array
  *	logarithmacally 0(log n) complexity
